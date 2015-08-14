@@ -6,5 +6,12 @@ ServerTask.run = function () {
   var args = Array.prototype.slice.call(arguments)
   var name = args.shift()
 
-  Meteor.call('task', ServerTask._token, name, args)
+  Meteor.call('_ServerTask', ServerTask._token, name, args, function (error, result) {
+    if (error) {
+      throw error
+    } else {
+      console.log('ServerTask succeed')
+      console.log('RESULT:', result)
+    }
+  })
 }
