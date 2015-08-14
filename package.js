@@ -16,6 +16,6 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('poeitc:server-task');
+  api.use('poetic:server-task');
   api.addFiles('server-task-tests.js');
 });
